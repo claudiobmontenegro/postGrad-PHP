@@ -1,4 +1,4 @@
-function onlyOneCheckBox() {
+function verifyCheckbox() {
 	var checkboxgroup = document.getElementById('typeCheckbox').getElementsByTagName("input");
 	var limit = 3;
 	for (var i = 0; i < checkboxgroup.length; i++) {
@@ -11,8 +11,13 @@ function onlyOneCheckBox() {
 				alert("You can select maximum of " + limit + " checkbox.");
 				this.checked = false;
 			}
+			if (checkedcount == 0){
+				alert("You need to select at least one checkbox");
+			}
 		}
 	}
 }
 
-onlyOneCheckBox();
+function navigateToList(){	
+	window.location.href = "list.php";
+}
