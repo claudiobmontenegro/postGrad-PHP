@@ -17,9 +17,12 @@
         <h2>Pokemon List</h2>
         <form>
             <?php
+            require 'vendor/autoload.php';
+            use Hashids\Hashids;
+            $hashids = new Hashids();
             $database = new PDO('mysql:host=localhost;dbname=postgrad', 'root', '');
             $query = "SELECT * FROM pokemon";
-            $dataset = $database->query($query);
+            $dataset = $database->query($query);            
             ?>
             <table class="table table-hover">
                 <tr>
@@ -27,6 +30,7 @@
                     <td>Combat Power:</td>
                     <td>Types:</td>
                     <td>Codes:</td>
+                    <td>Hash:</td>
                 </tr>
                 <?php
                 while ($row = $dataset->fetch(PDO::FETCH_ASSOC)) {
@@ -35,6 +39,7 @@
                     echo "<td>" . $row['power'] . "</td>";
                     echo "<td>" . $row['type'] . "</td>";
                     echo "<td>" . $row['code'] . "</td>";
+                    echo "<td>" . $hashids->encode($row['id']) . "</td>";
                 }
                 ?>
             </table>
