@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Register</title>
+    <link href="css/style.css" rel="stylesheet" />    
+</head>
+
+<body>
+    <div class="container">
+        <h2>Cadastro de Pokémon</h2>
+        <form action="main.php" method="post">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="code">Código:</label>
+                <input type="text" id="code" name="code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="power">Poder Total:</label>
+                <input type="text" id="power" name="power" required>
+            </div>
+
+            <div class="form-group" id="typeCheckbox">
+                <label for="types">Tipos (máximo 3):</label>
+                <div class="types">
+                    <label><input type="checkbox" name="types[]" value="normal"> Normal</label>
+                    <label><input type="checkbox" name="types[]" value="fire"> Fire</label>
+                    <label><input type="checkbox" name="types[]" value="water"> Water</label>
+                    <label><input type="checkbox" name="types[]" value="electric"> Electric</label>
+                    <label><input type="checkbox" name="types[]" value="grass"> Grass</label>
+                    <label><input type="checkbox" name="types[]" value="ice"> Ice</label>
+                    <label><input type="checkbox" name="types[]" value="fighting"> Fighting</label>
+                    <label><input type="checkbox" name="types[]" value="poison"> Poison</label>
+                    <label><input type="checkbox" name="types[]" value="ground"> Ground</label>
+                    <label><input type="checkbox" name="types[]" value="flying"> Flying</label>
+                    <label><input type="checkbox" name="types[]" value="psychic"> Psychic</label>
+                    <label><input type="checkbox" name="types[]" value="bug"> Bug</label>
+                    <label><input type="checkbox" name="types[]" value="rock"> Rock</label>
+                    <label><input type="checkbox" name="types[]" value="ghost"> Ghost</label>
+                    <label><input type="checkbox" name="types[]" value="dragon"> Dragon</label>
+                    <label><input type="checkbox" name="types[]" value="dark"> Dark</label>
+                    <label><input type="checkbox" name="types[]" value="steel"> Steel</label>
+                    <label><input type="checkbox" name="types[]" value="fairy"> Fairy</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>     
+    <script type="text/javascript" src="js/scripts.js"></script>  
+</body>
+
+</html>
