@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h2>Pokemon Register</h2>
-        <form method="post">
+        <form action="register.php" method="post">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
