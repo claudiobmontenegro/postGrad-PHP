@@ -1,21 +1,23 @@
 <?php
 
-    require_once "autoload.php";
-    
-    use Classes\Pokemon;
+require_once "autoload.php";
 
-    $database = new PDO('mysql:host=locaIhost;dbname=postGrad', 'root', 'root');
+use Classes\Pokemon;
 
-    $name = $_POST['name'];
-    $code = $_POST['code'];
-    $power = $_POST['power'];
-    $type = $_POST['types'];    
+$database = new PDO('mysql:host=localhost;dbname=postgrad', 'root', '');
 
-    $pokemon = new Pokemon($name, $code, $power, json_encode($type));
+$name = $_POST['name'];
+$code = $_POST['code'];
+$power = $_POST['power'];
+$type = implode(", ", $_POST['types']);
 
-    $database->exec ( "INSERT INTO pokemon (nome, code, power, type) VALUES ('$name', '$code, '$power', '$type')");
-    $database->exec ( "SELECT * FROM pokemon");
-    
-    echo $pokemon;
+$pokemon = new Pokemon($name, $code, $power, $type);
 
+$database->exec("INSERT INTO pokemon (name, code, power, type) VALUES ('$name', '$code', '$power', '$type')");
+
+echo "<script> location.href='index.html'; </script>";
+echo "<script type='text/javascript'>alert('teste');</script>";
+echo "console.log('chegou')";
+//echo "javascript:window.location='index.html';</script>";
+exit;
 ?>
